@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Plant Nursery</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+
+    <!-- Plant Details Section -->
+    <section class="plant-details-container">
+        <h2 id="plant-name">Plant Name</h2>
+        <img id="plant-image" src="#" alt="Plant Image">
+        <p id="plant-description">Plant description goes here.</p>
+    </section>
+
+    <!-- JavaScript for Dynamic Plant Data -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const plant = params.get('plant');
+
+        const plants = {
+            'rose': {
+                name: 'Rose',
+                description: 'A rose is a woody perennial flowering plant. Best grown in sunny areas.',
+                image: 'https://images.unsplash.com/photo-1562025080-79fa68855dfc'
+            },
+            'lavender': {
+                name: 'Lavender',
+                description: 'Lavender is a flowering plant in the mint family. It prefers well-drained soil.',
+                image: 'https://images.unsplash.com/photo-1592175968026-dabed055f118'
+            },
+            'aloe-vera': {
+                name: 'Aloe Vera',
+                description: 'Aloe Vera is a succulent plant species known for its medicinal properties.',
+                image: 'https://images.unsplash.com/photo-1592004676757-1f649a7d4e05'
+            },
+            'snake-plant': {
+                name: 'Snake Plant',
+                description: 'Low light, low maintenance plant. Perfect for indoor spaces.',
+                image: 'https://images.unsplash.com/photo-1580894923947-bd41f1d0038c'
+            },
+            'fiddle-leaf': {
+                name: 'Fiddle Leaf Fig',
+                description: 'Popular indoor plant with large, glossy leaves. Prefers bright, indirect light.',
+                image: 'https://images.unsplash.com/photo-1563958818-155a7ef07736'
+            },
+            'pothos': {
+                name: 'Pothos',
+                description: 'Easy care trailing plant with heart-shaped leaves. Ideal for beginners.',
+                image: 'https://images.unsplash.com/photo-1585081357967-e2f5d75e4f9e'
+            },
+            'philodendron': {
+                name: 'Philodendron',
+                description: 'Heart-shaped leaves, easy to grow. Thrives in low to medium light.',
+                image: 'https://images.unsplash.com/photo-1601580881033-63c5f5b6d4a7'
+            }
+        };
+
+        document.getElementById('plant-name').textContent = plants[plant].name;
+        document.getElementById('plant-description').textContent = plants[plant].description;
+        document.getElementById('plant-image').src = plants[plant].image;
+    </script>
+
+</body>
+</html>
